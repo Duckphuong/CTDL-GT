@@ -27,3 +27,361 @@ Corrective Actions
 3. I will allocate dedicated time for preparing the report instead of leaving it until the deadline.
 
 4. To reduce the impact of network issues, I will prepare the report offline when necessary and synchronize or submit it once the connection is stable.
+
+
+Daily Result – CSS Learning
+
+- Learned the fundamentals of CSS selectors and styling properties.
+- Practiced using Flexbox for horizontal and vertical alignment.
+- Implemented responsive design with "@media" queries and "max-width".
+- Created hover effects and dropdown menus using CSS.
+- Learned how to center text and elements inside containers.
+- Practiced using pseudo-elements ("::before" and "::after") for decorative effects.
+- Implemented text truncation with "text-overflow: ellipsis".
+- Explored the "<details>" and "<summary>" elements for collapsible content.
+- Built several small UI components to reinforce CSS concepts.
+Dưới đây là câu trả lời ngắn gọn cho từng ý:
+
+1. Làm thế nào chọn đúng ID khi trùng nhau?
+
+Về nguyên tắc, ID không được trùng nhau trong một trang HTML.
+
+Sai:
+
+<div id="menu"></div>
+<div id="menu"></div>
+
+Nếu trùng:
+
+CSS vẫn áp dụng cho cả hai.
+
+JavaScript (getElementById) chỉ lấy phần tử đầu tiên.
+
+Khó debug.
+
+
+=> Khi có nhiều phần tử giống nhau, hãy dùng class thay vì id.
+
+
+---
+
+2. Rendering Execution là gì?
+
+Quá trình trình duyệt hiển thị trang web:
+
+1. Đọc HTML → tạo DOM Tree.
+
+
+2. Đọc CSS → tạo CSSOM Tree.
+
+
+3. Kết hợp DOM + CSSOM → Render Tree.
+
+
+4. Tính toán vị trí, kích thước (Layout/Reflow).
+
+
+5. Vẽ giao diện lên màn hình (Paint).
+
+
+6. Hiển thị kết quả (Composite).
+
+
+
+
+---
+
+3. Comment là gì?
+
+Dùng để ghi chú code.
+
+HTML:
+
+<!-- Đây là comment -->
+
+CSS:
+
+/* Đây là comment */
+
+Mục đích:
+
+Giải thích code.
+
+Đánh dấu khu vực.
+
+Hỗ trợ bảo trì.
+
+
+
+---
+
+4. Bố cục trang (Layout)
+
+Một bố cục phổ biến:
+
+Header
+Navigation
+Main Content
+Sidebar
+Footer
+
+HTML:
+
+<header></header>
+<nav></nav>
+<main></main>
+<aside></aside>
+<footer></footer>
+
+
+---
+
+5. Tổ chức code Atomic / Functional
+
+Atomic Design
+
+Atoms
+ ↓
+Molecules
+ ↓
+Organisms
+ ↓
+Templates
+ ↓
+Pages
+
+Ví dụ:
+
+Button
+ ↓
+Search Form
+ ↓
+Header
+ ↓
+Home Template
+ ↓
+Home Page
+
+Functional CSS
+
+Tạo class nhỏ, mỗi class chỉ làm một việc.
+
+.text-center
+.mt-10
+.flex
+.w-100
+
+Ví dụ:
+
+<div class="flex text-center mt-10">
+
+
+---
+
+6. Responsive là gì?
+
+Website tự thích nghi với nhiều màn hình.
+
+Ví dụ:
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+}
+
+
+---
+
+7. Comment như thế nào cho tốt?
+
+Nên comment mục đích, không comment điều hiển nhiên.
+
+Không nên:
+
+width: 100%; /* đặt width 100% */
+
+Nên:
+
+/* Giúp menu chiếm toàn bộ chiều rộng trên mobile */
+width: 100%;
+
+
+---
+
+8. Nhầm ID thành Class Name
+
+HTML:
+
+<div id="header"></div>
+
+Sai:
+
+.header {}
+
+Đúng:
+
+#header {}
+
+
+---
+
+9. External Class và ID
+
+Độ ưu tiên CSS:
+
+Inline Style
+   >
+ID
+   >
+Class
+   >
+Tag
+
+Ví dụ:
+
+#menu {
+    color: red;
+}
+
+.menu {
+    color: blue;
+}
+
+<div id="menu" class="menu">
+
+Kết quả:
+
+red
+
+Vì ID ưu tiên cao hơn.
+
+
+---
+
+10. Class khác tên với ID
+
+HTML:
+
+<div id="header"></div>
+
+CSS:
+
+#menu {}
+
+CSS sẽ không áp dụng vì không tìm thấy id="menu".
+
+
+---
+
+11. Thuộc tính bị thiếu
+
+Ví dụ:
+
+.box {
+    text-overflow: ellipsis;
+}
+
+Không hoạt động.
+
+Phải thêm:
+
+.box {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+=> Nhiều thuộc tính CSS cần kết hợp với nhau mới hoạt động.
+
+
+---
+
+12. Đưa ID mà dùng Class
+
+HTML:
+
+<div id="content"></div>
+
+Sai:
+
+.content {}
+
+Đúng:
+
+#content {}
+
+Quy tắc nhớ nhanh:
+
+id    => #
+class => .
+
+Ví dụ:
+
+<div id="header" class="container"></div>
+
+#header {}
+.container {}
+
+Kết quả học tập trong ngày (Daily Result)
+
+Hôm nay tôi tập trung học và thực hành CSS, HTML cũng như cách tổ chức giao diện web.
+
+Kiến thức đã học
+
+- Cách xây dựng và bố cục trang web bằng HTML và CSS.
+- Responsive Design với Media Query ("max-width", "min-width").
+- Tổ chức mã nguồn theo hướng Atomic Design và tái sử dụng component.
+- Cách sử dụng comment để ghi chú và quản lý mã nguồn.
+- Hiểu quá trình render và thực thi của trình duyệt.
+- Sử dụng Flexbox để căn chỉnh phần tử.
+- Tạo menu dropdown, hiệu ứng hover và các thành phần giao diện cơ bản.
+
+Các lỗi gặp phải và bài học rút ra
+
+- Nhầm lẫn giữa bộ chọn ID ("#") và Class (".").
+- Khai báo "id" trong HTML nhưng lại sử dụng class selector trong CSS.
+- Tên class hoặc id trong CSS không khớp với tên được khai báo trong HTML.
+- Thiếu thuộc tính CSS cần thiết dẫn đến giao diện hiển thị không như mong muốn.
+- Chưa kiểm tra kỹ cấu trúc HTML và selector trước khi debug.
+- Học cách sử dụng DevTools để kiểm tra phần tử và xác định nguyên nhân lỗi.
+
+Kết quả đạt được
+
+- Hoàn thành các bài thực hành về bố cục giao diện.
+- Xây dựng được các thành phần responsive cơ bản.
+- Nâng cao khả năng debug HTML/CSS và hiểu rõ hơn về cách CSS áp dụng lên phần tử.
+Daily Result – Odoo Website Training
+
+Date: June 23, 2026
+
+Activities Completed
+
+- Learned the fundamentals of Odoo Website Builder.
+- Explored the Website Configurator and understood how to quickly create a website using predefined templates and settings.
+- Learned how to design website content, including text, images, and videos.
+- Studied how to create and customize contact forms.
+- Learned how to manage website navigation through links and menus.
+- Explored multilingual website support using the Translation feature.
+- Learned how to optimize and preview the website for mobile devices.
+- Gained basic knowledge about domain name registration and website publishing.
+
+Knowledge Gained
+
+- Understanding of Odoo Website module structure and features.
+- Ability to customize website content without coding.
+- Understanding of menu management and user navigation.
+- Knowledge of responsive design for mobile users.
+- Basic understanding of multilingual website management.
+- Familiarity with domain configuration concepts.
+
+Challenges
+
+- Some website configuration options were new and required additional exploration.
+- Understanding the relationship between website settings and user experience took time.
+
+Next Steps
+
+- Complete hands-on practice for each website-building feature.
+- Create a sample website using the learned functionalities.
+- Continue learning SEO, Blog management, Analytics, and Multi-Website features in Odoo.
