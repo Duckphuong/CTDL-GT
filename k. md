@@ -392,3 +392,77 @@ Planning for Tomorrow
 - Explore JavaScript functions and scope.
 - Learn basic DOM manipulation and event handling.
 - Complete hands-on exercises to reinforce JavaScript concepts.
+JavaScript Learning Summary
+
+Learned how JavaScript runs in the browser and operates as a single-threaded language.
+
+Explored variable declarations using var, let, and const, and learned when to use each.
+
+Studied JavaScript data types, including String, Number, Boolean, Null, Undefined, Object, Array, and Function.
+
+Learned how Scope works (Global, Function, and Block Scope).
+
+Explored Hoisting and the Temporal Dead Zone (TDZ).
+
+Practiced comparing values using == and ===, and understood the difference between undefined and null.
+
+Learned how the DOM is structured and how to select, modify, and create HTML elements.
+
+Practiced handling user interactions with addEventListener().
+
+Explored common browser events such as click, input, change, submit, and keydown.
+
+Learned how scripts are loaded using normal, defer, and async attributes.
+
+Studied the browser rendering process, including DOM, CSSOM, and Render Tree.
+
+Practiced debugging JavaScript using DevTools and various console methods.
+
+Explored timer functions including setTimeout, clearTimeout, setInterval, and clearInterval.
+
+Learned how browser storage works with Local Storage, Session Storage, and Cookies.
+
+Studied Cookie attributes such as Domain, Path, Secure, HttpOnly, SameSite, and HostOnly.
+
+Explored AJAX concepts and the role of XML in web communication.
+
+Practiced making HTTP requests using the Fetch API.
+
+Learned how asynchronous JavaScript works through Promises and browser APIs.
+
+Explored the Event Loop, Call Stack, Microtask Queue, and Macrotask Queue.
+
+Studied JavaScript execution order and task scheduling.
+
+Learned how Closures work and their practical use cases.
+
+Practiced implementing the Module Pattern using IIFE and Closure.
+
+Explored JavaScript code organization techniques and best practices.
+
+
+Key Interview Topics Reviewed
+
+Reviewed Scope and Hoisting concepts.
+
+Practiced explaining the Temporal Dead Zone (TDZ).
+
+Explored Closure behavior and common use cases.
+
+Studied the Event Loop and asynchronous execution flow.
+
+Compared Promise execution with setTimeout().
+
+Practiced using Async/Await for asynchronous operations.
+
+Worked with the Fetch API for data retrieval.
+
+Practiced DOM Manipulation techniques.
+
+Implemented Event Handling patterns.
+
+Compared Local Storage, Session Storage, and Cookies.
+
+Reviewed the differences between defer and async.
+
+Explored the Module Pattern and data encapsulation principles.
