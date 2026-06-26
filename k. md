@@ -499,3 +499,28 @@ Michael specializes in web application development and ERP customization. He is 
 Sophia Williams – Customer Support Manager
 
 Sophia oversees the helpdesk team and ensures every customer receives prompt, professional assistance. She is dedicated to providing excellent support and maintaining high customer satisfaction.
+Today's Learning Results
+
+1. Fetch API
+   
+   - What: Learned how the Fetch API is used to retrieve data asynchronously from a server.
+   - Why: To enable web applications to communicate with APIs and load dynamic content.
+   - How: Implemented "fetch()" to request data from an API and display the response on the webpage.
+
+2. Error Handling
+   
+   - What: Learned how to handle errors during API requests.
+   - Why: To prevent application crashes and provide meaningful feedback when a request fails.
+   - How: Used "try...catch" and checked the response status to handle failed requests gracefully.
+
+3. Loading Spinner
+   
+   - What: Learned how to manage loading states while fetching data.
+   - Why: To improve the user experience by indicating that data is being loaded.
+   - How: Displayed a loading spinner before sending the request and replaced it with the fetched data once the request completed successfully.
+
+4. Automatic Data Refresh
+   
+   - What: Learned how to periodically fetch updated data.
+   - Why: To keep the displayed information up to date without requiring a page refresh.
+   - How: Used "setInterval()" to automatically send a new request every 5 seconds and update the displayed data.
