@@ -59,3 +59,23 @@ Continue practicing and reinforcing the concepts learned this week.
 
 
 Đây là cách viết an toàn, chuyên nghiệp và đúng với thực tế khi bạn chưa biết chính xác nhiệm vụ của tuần tiếp theo.
+Weekly Report
+
+Activities| Status| Time Spent| Results
+Software Engineering Basics| Completed| 8 hours| 
+- Studied Architecture Patterns (MVC, MVVM): definitions, architecture, workflow, advantages, disadvantages, and use cases.| Completed| | Understood the theoretical concepts of MVC and MVVM.
+- Studied Design Patterns: Chain of Responsibility, Adapter, Factory, Abstract Factory, Builder, and Singleton.| Completed| | Learned the purpose, structure, use cases, advantages, and disadvantages of each pattern (theory only).
+HTML| Completed| 8 hours| 
+- Learned HTML document structure and semantic elements.| Completed| | Understood how to build a well-structured webpage.
+- Practiced working with forms, tables, images, links, and lists.| Completed| | Built basic HTML pages using common elements.
+- Learned HTML best practices and accessibility basics.| Completed| | Improved understanding of semantic and maintainable HTML.
+CSS| Completed| 8 hours| 
+- Studied selectors, the box model, Flexbox, and Grid.| Completed| | Able to create responsive layouts.
+- Practiced positioning, pseudo-elements, animations, and responsive design.| Completed| | Applied CSS to build responsive interfaces.
+JavaScript| Completed| 16 hours| 
+- Learned variables, data types, functions, scope, and arrays.| Completed| | Understood JavaScript fundamentals.
+- Practiced DOM manipulation and event handling.| Completed| | Built interactive web page features.
+- Learned Fetch API, async/await, error handling, loading spinner, and periodic data fetching.| Completed| | Successfully retrieved and displayed data from APIs.
+Odoo Website| Completed| 8 hours| 
+- Built a simple website using Odoo Website Builder.| Completed| | Created a basic website with reusable blocks.
+- Practiced page creation, navigation menu, and basic customization.| Completed| | Gained hands-on experience with Odoo website development.
