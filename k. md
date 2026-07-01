@@ -1,3 +1,40 @@
+
+function createToggle(id) {
+    let isOpen = false;
+
+    function update() {
+        const element = document.getElementById(id);
+        element.style.display = isOpen ? "block" : "none";
+    }
+
+    return {
+        toggle() {
+            isOpen = !isOpen;
+            update();
+        },
+
+        open() {
+            isOpen = true;
+            update();
+        },
+
+        close() {
+            isOpen = false;
+            update();
+        },
+
+        getState() {
+            return isOpen;
+        }
+    };
+}
+
+const menu = createToggle("menu");
+
+menu.toggle();
+menu.open();
+console.log(menu.getState());
+
 Weekly Report
 
 Activities
