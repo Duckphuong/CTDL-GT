@@ -90,3 +90,24 @@ Daily Task
 - Understand the interaction between models, views, controllers, and modules within the Odoo framework.
 - Explore the request processing flow and the relationship between the backend and frontend.
 - Summarize the key concepts and take notes for future practical implementation.
+
+1/ HTML
+<meta charset="UTF-8"> : để trình duyệt hiển thị đúng tiếng Việt và các ký tự đặc biệt
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+Viewport: vùng hiển thị của thiết bị
+Width=device-width: trình duyệt hiểu là chiều rộng website = chiều rộng của màn hình thiết bị
+Initial-scale : độ zoom ban đầu của trang web
+ID và class cái nào hỗ trợ SEO tốt hơn? Hai cái này không ảnh hưởng đến SEO
+Thẻ details và summary 
+2/CSS
+Sticky header: muốn thẻ thứ 2 sticky, đưa ra 3 cách 
+Tách biệt thẻ thứ 2 ra để nó có cha là main và cho nó thuộc tính position : sticky, top : 0
+Áp dụng js : nếu scrollY > height (header 1) thì cho header 2 có top : 0
+Gộp hai header lại là 1 và cho top : - (chiều cao header 1)
+Responsive : đổi từ flex-direction row -> column để hiển thị ở màn hình nhỏ (768px)
+Display flex:
+Justify-content : căn theo trục chính của cha, nếu flex direction là row (display flex) thì sẽ là trục ngang, ngược lại nếu flex direction là column thì là trục dọc
+Align-item : căn theo trục phụ của cha, nếu flex direction là row (display flex) thì sẽ là trục dọc, ngược lại nếu flex direction là column thì là trục ngang
+2/JS
+-Closure
+-Làm sao để sau 2s thì mới gọi api:
