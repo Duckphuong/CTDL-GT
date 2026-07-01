@@ -1,4 +1,36 @@
+function createToggle(id) {
+    const element = document.getElementById(id);
+    let isOpen = false;
 
+    function render() {
+        element.classList.toggle("active", isOpen);
+    }
+
+    return {
+        handleClick() {
+            isOpen = !isOpen;
+            render();
+        },
+
+        handleScroll() {
+            if (window.scrollY > 200 && isOpen) {
+                isOpen = false;
+                render();
+            }
+        },
+
+        handleKeydown(event) {
+            if (event.key === "Escape") {
+                isOpen = false;
+                render();
+            }
+        },
+
+        getState() {
+            return isOpen;
+        }
+    };
+}
 function createToggle(id) {
     let isOpen = false;
 
