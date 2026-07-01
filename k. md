@@ -111,3 +111,22 @@ Align-item : căn theo trục phụ của cha, nếu flex direction là row (dis
 2/JS
 -Closure
 -Làm sao để sau 2s thì mới gọi api:
+Daily Result
+
+Today, I gained a deeper understanding of Odoo's architecture and core development concepts.
+
+What I learned:
+
+- Understood the overall Odoo system architecture, including the roles of the PostgreSQL database, Odoo application server, and presentation layer.
+- Learned how the MVC architecture is applied in Odoo and how Models, Views, and Controllers interact with each other.
+- Explored the standard Odoo module structure, including the purposes of "__manifest__.py", "__init__.py", "models", "views", "security", "data", "static", and "controllers".
+- Learned key Odoo framework concepts such as addons paths, module dependencies, module lifecycle, and inheritance mechanisms.
+- Studied the Odoo ORM and how it allows developers to interact with the database using Python objects instead of writing SQL queries.
+- Understood the differences between Persistent Models, Transient Models, and Abstract Models, along with their use cases.
+- Learned different inheritance patterns in Odoo, including Classical Inheritance, Extension Inheritance, and Delegation Inheritance.
+- Studied important model attributes such as "_name", "_description", "_table", and "_rec_name".
+- Learned about Odoo relationship fields, including Many2one, One2many, and Many2many.
+- Reviewed CRUD operations, search methods, records, recordsets, model classes, and the security mechanism.
+- Explored the main Odoo UI views, including Form, Tree, Kanban, Search, Graph, and Pivot views.
+- Learned common view components and attributes such as fields, widgets, groups, notebooks, buttons, status bars, attrs, decorations, context, and domain.
+- Gained an overview of Odoo website development concepts, including REST APIs, external API integration, website controllers, templates, template inheritance, and snippets.
