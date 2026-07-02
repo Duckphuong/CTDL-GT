@@ -1,3 +1,36 @@
+ const spinner = document.getElementById('loading-spinner')
+    const container = document.getElementById('dynamic-content-area')
+    function getData() {
+        spinner.classList.remove('hidden');
+        container.classList.add('hidden');
+        console.time("timer_2s");
+        setTimeout(async () => {
+            console.timeEnd("timer_2s");
+            console.log("Gọi API sau 2 giây...");
+            const url = "http://localhost:3000/posts";
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                container.innerHTML = `<p>${data.data[0].content}</p>`;
+            } catch (error) {
+                console.error(error.message);
+                container.innerHTML = `<p>Error loading data.</p>`;
+            } finally {
+                spinner.classList.add('hidden');
+                container.classList.remove('hidden');
+            }
+        }, 2000);
+    }
+
+    getData();
+    setInterval(() => { getData() }, 5000);
+
+
 function createToggle(id) {
     const element = document.getElementById(id);
     let isOpen = false;
