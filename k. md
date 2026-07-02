@@ -1,4 +1,40 @@
 function createToggle(id, toggleClass) {
+    const element = document.getElementById(id);
+    let isOpen = false;
+
+    function render() {
+        element.classList.toggle(toggleClass, isOpen);
+    }
+
+    return {
+        handleClick() {
+            isOpen = !isOpen;
+            render();
+        },
+
+        handleScroll() {
+            if (window.scrollY > 300 && isOpen) {
+                isOpen = false;
+                render();
+            }
+        },
+
+        handleKeydown(event) {
+            if (event.key === "Escape" && isOpen) {
+                isOpen = false;
+                render();
+            }
+        },
+
+        getState() {
+            return isOpen;
+        }
+    };
+}const menu = createToggle("menu", "active");
+
+btn.addEventListener("click", menu.handleClick);
+window.addEventListener("scroll", menu.handleScroll);
+document.addEventListener("keydown", menu.handleKeydown); function createToggle(id, toggleClass) {
     const element = id === "body"
         ? document.body
         : document.getElementById(id);
