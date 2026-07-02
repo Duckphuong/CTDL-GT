@@ -1,3 +1,394 @@
+Dưới đây là những nội dung bạn nên bổ sung để tài liệu đầy đủ hơn, vẫn giữ theo phong cách ngắn gọn, dễ ôn tập.
+
+
+---
+
+8. Giải thích các thuật ngữ quan trọng
+
+Stakeholder (Các bên liên quan)
+
+Là tất cả cá nhân hoặc tổ chức có ảnh hưởng hoặc bị ảnh hưởng bởi dự án.
+
+Ví dụ:
+
+Khách hàng
+
+Project Manager
+
+Developer
+
+Tester
+
+Business Analyst
+
+Ban lãnh đạo
+
+
+Mục tiêu: Hiểu nhu cầu của từng stakeholder để dự án đáp ứng đúng kỳ vọng.
+
+
+---
+
+Scope (Phạm vi dự án)
+
+Là toàn bộ công việc cần thực hiện để tạo ra sản phẩm.
+
+Ví dụ:
+
+Website bán hàng gồm:
+
+Đăng nhập
+
+Đăng ký
+
+Giỏ hàng
+
+Thanh toán
+
+
+
+Nếu khách hàng yêu cầu thêm Chat AI trong khi dự án đang thực hiện thì đây là thay đổi phạm vi.
+
+
+---
+
+Scope Creep
+
+Là việc phạm vi dự án tăng lên ngoài kế hoạch mà không điều chỉnh thời gian hoặc chi phí.
+
+Ví dụ:
+
+Ban đầu:
+
+10 chức năng
+
+
+Sau đó khách hàng yêu cầu:
+
+Chat
+
+Dark mode
+
+Đa ngôn ngữ
+
+
+Nhưng deadline vẫn giữ nguyên.
+
+Đây gọi là Scope Creep.
+
+Cách xử lý
+
+Đánh giá ảnh hưởng
+
+Thống nhất lại với khách hàng
+
+Cập nhật kế hoạch dự án
+
+
+
+---
+
+Milestone
+
+Là mốc quan trọng trong dự án.
+
+Ví dụ:
+
+Hoàn thành thiết kế
+
+Hoàn thành Backend
+
+Hoàn thành Testing
+
+Go Live
+
+
+Milestone dùng để đánh giá tiến độ.
+
+
+---
+
+Deliverable
+
+Là sản phẩm được bàn giao.
+
+Ví dụ:
+
+Source code
+
+API
+
+Website
+
+Tài liệu hướng dẫn
+
+Báo cáo kiểm thử
+
+
+
+---
+
+9. Work Breakdown Structure (WBS)
+
+WBS là cách chia nhỏ dự án thành các công việc nhỏ hơn để dễ quản lý.
+
+Ví dụ:
+
+Website
+
+Frontend
+
+Login
+
+Home
+
+Product
+
+
+Backend
+
+API Login
+
+API Product
+
+
+Database
+
+Testing
+
+
+Lợi ích
+
+Dễ phân công
+
+Dễ ước lượng
+
+Dễ theo dõi tiến độ
+
+
+
+---
+
+10. Gantt Chart
+
+Là biểu đồ thể hiện thời gian thực hiện các công việc.
+
+Ví dụ:
+
+Task              Tuần 1   Tuần 2   Tuần 3
+
+Analysis          ███
+Design                     ███
+Coding                             █████
+Testing                                   ███
+Deploy                                          █
+
+Lợi ích
+
+Theo dõi tiến độ
+
+Biết công việc nào đang thực hiện
+
+Phát hiện chậm tiến độ
+
+
+
+---
+
+11. Risk Management (Quản lý rủi ro)
+
+Là quá trình nhận diện và xử lý các rủi ro trước khi chúng xảy ra.
+
+Các bước:
+
+1. Xác định rủi ro
+
+
+2. Đánh giá mức độ
+
+
+3. Lập phương án xử lý
+
+
+4. Theo dõi
+
+
+
+Ví dụ:
+
+Rủi ro:
+
+Developer nghỉ việc
+
+Server lỗi
+
+Khách hàng đổi yêu cầu
+
+
+Giải pháp:
+
+Có người dự phòng
+
+Backup dữ liệu
+
+Quản lý thay đổi (Change Request)
+
+
+
+---
+
+12. Vai trò của Project Manager
+
+Project Manager không phải là người code nhiều nhất.
+
+Nhiệm vụ:
+
+Lập kế hoạch
+
+Phân công công việc
+
+Theo dõi tiến độ
+
+Quản lý rủi ro
+
+Quản lý ngân sách
+
+Làm việc với khách hàng
+
+Đảm bảo dự án hoàn thành đúng hạn
+
+
+
+---
+
+13. Waterfall và Agile
+
+Waterfall
+
+Các bước thực hiện tuần tự:
+
+Requirements → Design → Development → Testing → Deployment
+
+Ưu điểm
+
+Dễ quản lý
+
+Phù hợp yêu cầu ổn định
+
+
+Nhược điểm
+
+Khó thay đổi yêu cầu
+
+
+
+---
+
+Agile
+
+Làm việc theo từng Sprint ngắn (1–4 tuần).
+
+Mỗi Sprint đều có sản phẩm hoàn chỉnh.
+
+Ưu điểm
+
+Linh hoạt
+
+Nhận phản hồi nhanh
+
+Dễ thay đổi
+
+
+Nhược điểm
+
+Cần giao tiếp liên tục
+
+Khó dự đoán chi phí chính xác
+
+
+
+---
+
+14. KPI đánh giá thành công của dự án
+
+Một dự án thành công khi:
+
+Hoàn thành đúng thời hạn.
+
+Không vượt ngân sách.
+
+Đạt chất lượng yêu cầu.
+
+Khách hàng hài lòng.
+
+Đội ngũ làm việc hiệu quả.
+
+Rủi ro được kiểm soát.
+
+
+
+---
+
+15. Ví dụ quy trình một dự án thực tế
+
+Ví dụ: Xây dựng website bán hàng
+
+1. Initiate
+
+
+
+Gặp khách hàng
+
+Thu thập yêu cầu
+
+
+2. Plan
+
+
+
+Chia công việc (WBS)
+
+Ước lượng thời gian
+
+Phân công nhân sự
+
+
+3. Execute
+
+
+
+Developer lập trình
+
+Tester kiểm thử
+
+
+4. Monitor & Control
+
+
+
+Theo dõi tiến độ
+
+Báo cáo hàng tuần
+
+Xử lý lỗi và thay đổi
+
+
+5. Close
+
+
+
+Bàn giao source code
+
+Hướng dẫn sử dụng
+
+Tổng kết bài học kinh nghiệm
+
+
+
+---
+
+Với các nội dung trên, tài liệu của bạn sẽ đầy đủ hơn rất nhiều và bao quát hầu hết những kiến thức cơ bản về Project Management mà một lập trình viên hoặc người mới học Odoo cần nắm.
+
 Daily Result
 
 - Reinforced my understanding of the Odoo system architecture and MVC pattern.
