@@ -1,4 +1,12 @@
-function createFontSize() {
+Daily Result
+
+- Reinforced my understanding of the Odoo system architecture and MVC pattern.
+- Reviewed the structure of Odoo modules and the responsibilities of each directory.
+- Strengthened my understanding of the Odoo ORM and how it interacts with the PostgreSQL database.
+- Reviewed different Odoo model types, inheritance patterns, and relationship fields.
+- Reinforced my knowledge of Odoo views, UI components, and view attributes.
+- Reviewed Odoo website development concepts, including controllers, templates, and REST API integration.
+- Improved my overall understanding of the Odoo framework and development workflow.function createFontSize() {
     const sizes = ["small", "medium", "large"];
 
     // Khôi phục từ localStorage
