@@ -1,4 +1,19 @@
 function createToggle(id, toggleClass) {
+    const element = id === "body"
+        ? document.body
+        : document.getElementById(id);
+
+    let isOpen = element.classList.contains(toggleClass);
+
+    return function () {
+        isOpen = !isOpen;
+        element.classList.toggle(toggleClass, isOpen);
+
+        if (id === "body") {
+            localStorage.setItem("theme", isOpen ? "dark" : "light");
+        }
+    };
+}function createToggle(id, toggleClass) {
     return function () {
         if (id === 'body') {
             document.body.classList.toggle(toggleClass)
