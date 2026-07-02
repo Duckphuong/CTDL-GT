@@ -1,4 +1,48 @@
- const spinner = document.getElementById('loading-spinner')
+Nếu đúng vấn đề của bạn là không nghĩ ra cách làm, chứ không phải viết sai cú pháp, thì RCA nên tập trung vào tư duy giải quyết vấn đề thay vì kiến thức.
+
+Bạn có thể viết như sau:
+
+Issue
+
+Cần hiển thị loading spinner trong 2 giây rồi mới gọi API, nhưng không nghĩ ra cách triển khai phù hợp.
+
+Root Cause
+
+Chưa hiểu rõ cách kết hợp setTimeout() với async/await và fetch(). Khi gặp yêu cầu có độ trễ trước khi gọi API, chỉ nghĩ đến việc gọi fetch() trực tiếp mà chưa liên hệ đến việc sử dụng setTimeout() hoặc tạo hàm delay() để kiểm soát luồng thực thi.
+
+Impact
+
+Mất nhiều thời gian tìm cách triển khai.
+
+Phụ thuộc vào việc tra cứu thay vì tự suy luận từ kiến thức đã học.
+
+Chưa chủ động lựa chọn được giải pháp phù hợp cho các bài toán bất đồng bộ.
+
+
+Corrective Action
+
+Ôn lại cơ chế hoạt động của setTimeout(), Promise và async/await.
+
+Thực hành nhiều bài tập về việc trì hoãn thực thi (delay), gọi API sau một khoảng thời gian và polling dữ liệu.
+
+Xây dựng sẵn một hàm delay(ms) để tái sử dụng trong các bài toán cần chờ trước khi thực hiện tác vụ.
+
+
+Preventive Action
+
+Khi gặp yêu cầu có từ khóa như "chờ", "delay", "sau X giây", "đợi hoàn thành rồi mới làm tiếp", sẽ phân tích bài toán theo các bước:
+
+1. Có cần trì hoãn không? → setTimeout() hoặc delay().
+
+
+2. Có phải tác vụ bất đồng bộ không? → Promise / async-await.
+
+
+3. Có cần lặp lại không? → Xem xét setTimeout() đệ quy hoặc setInterval() tùy yêu cầu.
+
+
+
+RCA này phản ánh đúng vấn đề bạn gặp: không phải không biết setTimeout, mà là chưa hình thành tư duy liên kết các kiến thức (setTimeout + Promise + fetch) để nghĩ ra giải pháp. const spinner = document.getElementById('loading-spinner')
     const container = document.getElementById('dynamic-content-area')
     function getData() {
         spinner.classList.remove('hidden');
