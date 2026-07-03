@@ -1,5 +1,28 @@
 Weekly Report (29/06 – 03/07)
 
+Activities| Status| Time Spent| Results
+Create a sample e-commerce website using Odoo Website Builder.| Completed| ~4 hours| Successfully created and deployed a basic e-commerce website with user login functionality.
+Study software project management fundamentals.| Completed| ~2 hours| Understood the purpose of project management and its role in software development.
+Learn key project management concepts (Sprint, Backlog, Kanban, Bug, Deployment).| Completed| ~2 hours| Gained a basic understanding of common project management terminology and workflows.
+Learn project planning, task management, and progress tracking in Odoo.| Completed| ~2 hours| Understood how Odoo supports project planning, task assignment, collaboration, and progress monitoring.
+Summarize Odoo Part 2 learning materials.| Completed| ~2 hours| Completed a summary document for future reference and review.
+Study the overall Odoo architecture.| Completed| ~2 hours| Understood the roles of the PostgreSQL database, Odoo server, and presentation layer.
+Learn how the MVC architecture is implemented in Odoo.| Completed| ~2 hours| Understood the interaction between Models, Views, and Controllers in Odoo.
+Explore the Odoo module structure.| Completed| ~2 hours| Learned the responsibilities of directories such as "models", "views", "controllers", "security", "data", "static", and configuration files.
+Study the Odoo ORM, model types, and inheritance mechanisms.| Completed| ~3 hours| Understood how ORM works, different model types, inheritance methods, and relationship fields.
+Learn CRUD operations, recordsets, and Odoo security concepts.| Completed| ~2 hours| Gained an understanding of database operations and the Odoo security mechanism.
+Study Odoo UI views and website development concepts.| Completed| ~3 hours| Learned Form, Tree, Kanban, Search, Graph, Pivot views, website controllers, templates, snippets, and REST API integration.
+Review Odoo Part 3 knowledge.| Completed| ~3 hours| Reinforced the understanding of Odoo architecture and development concepts.
+Review HTML, CSS, and JavaScript fundamentals (Web101).| Completed| ~4 hours| Strengthened frontend knowledge required for Odoo website development and completed the Web101 qualification review.
+
+Next Week Plan
+
+Activities| Estimated Time| Deadline
+Create sample Odoo modules to practice the concepts learned in Part 3.| TBD| End of next week
+Continue following the assigned Odoo training schedule.| TBD| As assigned
+Complete tasks assigned by the mentor.| TBD| As assigned
+Weekly Report (29/06 – 03/07)
+
 Activities
 
 Activities| Status| Time Spent| Results
