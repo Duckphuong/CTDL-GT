@@ -1,3 +1,20 @@
+Weekly Report (29/06 – 03/07)
+
+Activities
+
+Activities| Status| Time Spent| Results
+Odoo Part 1 – Website Development| Completed| ~1 day| - Created a sample e-commerce website using Odoo Website Builder.<br>- Practiced website creation, page customization, and basic website configuration.<br>- Successfully deployed the sample website and verified user login functionality.
+Odoo Part 2 – Software Project Management| Completed| ~2 days| - Studied project management fundamentals and software development workflow.<br>- Learned key concepts including Sprint, Backlog, Kanban, Bug, and Deployment.<br>- Understood why project management is important and how Odoo supports project planning, task management, collaboration, and progress tracking.<br>- Completed a summary document to consolidate the learning materials.
+Odoo Part 3 – Odoo Architecture| In Progress| ~2 days| - Studied the overall Odoo architecture, including PostgreSQL, Odoo Server, and Presentation Layer.<br>- Learned how MVC is implemented in Odoo.<br>- Explored the structure of Odoo modules and the purpose of each directory.<br>- Studied the Odoo ORM, model types, inheritance mechanisms, relationship fields, CRUD operations, recordsets, and security concepts.<br>- Learned different Odoo views, UI components, controllers, templates, website development, and REST API integration.<br>- Reviewed and reinforced the concepts through note-taking and knowledge consolidation.
+Web101 Review| Completed| ~1 day| - Reviewed HTML, CSS, and JavaScript fundamentals to strengthen the knowledge required for Odoo website development.<br>- Completed the Web101 qualification review.
+
+Next Week Plan
+
+Activities| Estimated Time| Deadline
+Complete practical exercises for Odoo Part 3 by creating sample modules.| TBD| End of next week
+Continue following the assigned Odoo training schedule.| TBD| As assigned
+Complete new tasks assigned by the mentor.| TBD| As assigned
+Continue reviewing and reinforcing Odoo architecture and development concepts through hands-on practice.| TBD| End of next week
 Daily task (29/06)
 Odoo part 1 : Project & timeline : Create new site for user manage project and timeline
 Odoo Part 2 : Project management : read Project Management Essentials book and slide
