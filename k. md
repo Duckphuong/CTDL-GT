@@ -1,3 +1,19 @@
+Daily Result
+
+- Completed the Library Management module structure in Odoo.
+- Created and configured models for Author, Category, Publisher, Book, Member, Borrow, and Borrow Line.
+- Implemented model relationships using Many2one and One2many.
+- Created access rights ("ir.model.access.csv") for all models.
+- Built menus, actions, and tree/form views for all main models.
+- Added One2many notebook and Smart Button to display related books for authors and publishers.
+- Implemented business validations for the Book model, including quantity validation, available quantity validation, automatic state computation, and unique ISBN constraint.
+- Reviewed and understood Odoo concepts such as "@api.constrains", "@api.depends", "_sql_constraints", "create()", "write()", "unlink()", and "search()".Planning
+
+- Create and configure the sequence for borrow records.
+- Implement the borrow business logic, including automatic borrow number generation.
+- Develop the borrow confirmation process and validate book availability.
+- Implement the return book process and automatically update available book quantities.
+- Continue testing and refining the Library Management module. 
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
