@@ -1,3 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_library_book_tree" model="ir.ui.view">
+        <field name="name">library.book.tree</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="isbn"/>
+                <field name="author_id"/>
+                <field name="category_id"/>
+                <field name="publisher_id"/>
+                <field name="quantity"/>
+                <field name="available_quantity"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_library_book_form" model="ir.ui.view">
+        <field name="name">library.book.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="isbn"/>
+                        <field name="author_id"/>
+                        <field name="category_id"/>
+                        <field name="publisher_id"/>
+                        <field name="publish_year"/>
+                        <field name="quantity"/>
+                        <field name="available_quantity"/>
+                        <field name="shelf"/>
+                        <field name="state"/>
+                        <field name="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
 Daily Result
 
 - Created Odoo Part 3 practice examples.
