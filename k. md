@@ -1,3 +1,19 @@
+Bạn có thể ghi ngắn gọn như sau:
+
+Daily Result
+
+Completed the library management module by implementing report and wizard features.
+
+Improved the membership system by redesigning it into a configurable Membership model with business rules for borrowing limits.
+
+Enhanced understanding of Odoo ORM, model relationships, actions, and business logic implementation.
+
+
+Planning (Next Day)
+
+Continue implementing borrowing business rules (borrow record limits, overdue validation, automatic due date calculation).
+
+Improve the library module with additional validations and business logic.
 Daily Result
 
 - Completed the Library Management module structure in Odoo.
