@@ -1,3 +1,14 @@
+Daily Result
+
+Implemented automatic calculation of due_date based on membership rules using a stored computed field.
+
+Added and tested the business rule that prevents members with overdue borrow records from creating new borrow transactions.
+
+Improved understanding of Odoo ORM domains, computed fields, and validation logic.Planning (Next Day)
+
+Implement the book return workflow and automatically record the actual return date.
+
+Add overdue day calculation and prepare the foundation for late fee computation. 
 Bạn có thể ghi ngắn gọn như sau:
 
 Daily Result
