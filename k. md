@@ -1,5 +1,11 @@
 Daily Result
 
+- Implemented the book return workflow by updating the borrow transaction status and automatically storing the actual return date when a book is returned.
+- Added overdue day calculation using the difference between the expected return date and the actual return date, providing the basis for future late fee processing.Planning (Next Day)
+
+- Perform an overall review and testing of the current library management system to verify that the implemented workflows and calculations function correctly and consistently. 
+Daily Result
+
 Implemented automatic calculation of due_date based on membership rules using a stored computed field.
 
 Added and tested the business rule that prevents members with overdue borrow records from creating new borrow transactions.
