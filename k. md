@@ -1,3 +1,93 @@
+Việc phân quyền hợp lý trong Odoo thường được chia thành hai cấp độ chính: **Người dùng cơ bản** (nhân viên thư viện) chỉ có quyền thực hiện các nghiệp vụ mượn trả và xem thông tin, và **Quản lý thư viện** (Admin) có quyền thay đổi các thiết lập cốt lõi như cấp độ thẻ thành viên hoặc xóa dữ liệu.
+
+Dựa trên nhóm bảo mật `group_library_manager` đã được định nghĩa trong tệp `library_security.xml`, dưới đây là bản thiết kế lại tệp `ir.model.access.csv` tối ưu cho hệ thống của bạn:
+
+### Cấu trúc file ir.model.access.csv đề xuất
+
+``` csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+# --- QUYỀN CHO NGƯỜI DÙNG CƠ BẢN (LIBRARY USER) ---
+access_library_book_user,library.book.user,model_library_book,base.group_user,1,0,0,0
+access_library_author_user,library.author.user,model_library_author,base.group_user,1,0,0,0
+access_library_publisher_user,library.publisher.user,model_library_publisher,base.group_user,1,0,0,0
+access_library_category_user,library.book.category.user,model_library_book_category,base.group_user,1,0,0,0
+access_library_member_user,library.member.user,model_library_member,base.group_user,1,1,1,0
+access_library_borrow_user,library.borrow.user,model_library_borrow,base.group_user,1,1,1,0
+access_library_borrow_line_user,library.borrow.line.user,model_library_borrow_line,base.group_user,1,1,1,0
+access_library_membership_user,library.membership.user,model_library_membership,base.group_user,1,0,0,0
+access_borrow_extend_wizard_user,borrow.extend.wizard.user,model_borrow_extend_wizard,base.group_user,1,1,1,1
+
+# --- QUYỀN CHO QUẢN LÝ (LIBRARY MANAGER) ---
+access_library_book_manager,library.book.manager,model_library_book,group_library_manager,1,1,1,1
+access_library_author_manager,library.author.manager,model_library_author,group_library_manager,1,1,1,1
+access_library_publisher_manager,library.publisher.manager,model_library_publisher,group_library_manager,1,1,1,1
+access_library_category_manager,library.book.category.manager,model_library_book_category,group_library_manager,1,1,1,1
+access_library_member_manager,library.member.manager,model_library_member,group_library_manager,1,1,1,1
+access_library_borrow_manager,library.borrow.manager,model_library_borrow,group_library_manager,1,1,1,1
+access_library_borrow_line_manager,library.borrow.line.manager,model_library_borrow_line,group_library_manager,1,1,1,1
+access_library_membership_manager,library.membership.manager,model_library_membership,group_library_manager,1,1,1,1
+
+```
+
+### Phân tích logic phân quyền:
+
+1.  **Dữ liệu nền (Sách, Tác giả, NXB, Danh mục):**
+    
+      * **Nhân viên (`base.group_user`):** Chỉ có quyền đọc (`perm_read`) để tra cứu khi làm thủ tục mượn sách. Họ không được phép thêm sách mới hoặc đổi thông tin tác giả để tránh sai sót dữ liệu.
+      * **Quản lý (`group_library_manager`):** Toàn quyền (Full access) để cập nhật kho sách.
+
+2.  **Nghiệp vụ mượn trả (Borrow & Member):**
+    
+      * **Nhân viên:** Được phép Tạo mới và Sửa (`perm_create`, `perm_write`) để thực hiện các phiếu mượn trả sách hàng ngày. Tuy nhiên, quyền Xóa (`perm_unlink`) bị khóa để giữ lại lịch sử giao dịch.
+      * **Quản lý:** Có quyền xóa các bản ghi lỗi nếu cần thiết.
+
+3.  **Cấu hình thẻ thành viên (Membership):**
+    
+      * **Nhân viên:** Chỉ xem được các cấp độ thẻ (Gold, Silver, Normal) và các chính sách đi kèm.
+      * **Quản lý:** Được phép thay đổi số lượng sách tối đa hoặc phí phạt trễ hạn.
+
+4.  **Công cụ hỗ trợ (Wizard):**
+    
+      * **Nhân viên:** Cần toàn quyền với `borrow.extend.wizard` để thực hiện việc gia hạn ngày trả sách cho khách hàng thông qua giao diện popup.
+
+**Lưu ý quan trọng:** Để các phân quyền này hoạt động chính xác, bạn cần đảm bảo tệp `library_security.xml` được khai báo **trước** tệp `ir.model.access.csv` trong danh sách `data` của tệp `__manifest__.py`.
+
+Bạn có muốn tôi hỗ trợ viết thêm các `Record Rules` để nhân viên chỉ thấy được các phiếu mượn do chính họ tạo không?
+Dựa trên các tệp mã nguồn Odoo mà bạn đã cung cấp, dưới đây là cấu trúc bảng database chi tiết cho hệ thống quản lý thư viện của bạn:
+
+### 1\. Sách & Phân loại (Books & Categorization)
+
+| Bảng (Model)              | Trường (Fields)                                                                                         | Kiểu dữ liệu                                      | Quan hệ                                                                       |
+| :------------------------ | :------------------------------------------------------------------------------------------------------ | :------------------------------------------------ | :---------------------------------------------------------------------------- |
+| **library.book**          | `id`, `name`, `isbn`, `publish_year`, `quantity`, `available_quantity`, `shelf`, `cover_image`, `state` | Integer, Char, Integer, Integer, Image, Selection | FK: `author_id` (N-1)<br>FK: `publisher_id` (N-1)<br>M2M: `category_id` (N-N) |
+| **library.author**        | `id`, `name`, `biography`, `birthday`, `country`, `book_count`                                          | Integer, Char, Text, Date, Char                   | O2M: `book_ids`                                                               |
+| **library.book.category** | `id`, `name`, `description`                                                                             | Integer, Char, Text                               | O2M: `book_ids`                                                               |
+| **library.publisher**     | `id`, `name`, `address`, `phone`, `email`                                                               | Integer, Char, Char                               | O2M: `book_ids`                                                               |
+
+### 2\. Thành viên & Thẻ thành viên (Members & Membership)
+
+| Bảng (Model)           | Trường (Fields)                                                                                                          | Kiểu dữ liệu               | Quan hệ                                        |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------------------- | :------------------------- | :--------------------------------------------- |
+| **library.member**     | `id`, `member_code`, `name`, `email`, `phone`, `address`, `join_date`, `image`, `borrow_count`, `completed_borrow_count` | Integer, Char, Date, Image | FK: `membership_id` (N-1)<br>O2M: `borrow_ids` |
+| **library.membership** | `id`, `name`, `max_books`, `borrow_days`, `discount`, `late_fee`                                                         | Integer, Char, Integer     | O2M: `member_id`                               |
+
+### 3\. Giao dịch mượn sách (Borrowing Transactions)
+
+| Bảng (Model)            | Trường (Fields)                                                                                                       | Kiểu dữ liệu                          | Quan hệ                                                         |
+| :---------------------- | :-------------------------------------------------------------------------------------------------------------------- | :------------------------------------ | :-------------------------------------------------------------- |
+| **library.borrow**      | `id`, `name` (Borrow No), `borrow_date`, `due_date`, `return_date`, `overdue_date`, `late_fee`, `state`, `total_book` | Integer, Char, Date, Float, Selection | FK: `member_id` (N-1)<br>FK: `book_id` (N-1)<br>O2M: `line_ids` |
+| **library.borrow.line** | `id`, `quantity`                                                                                                      | Integer                               | FK: `borrow_id` (N-1)<br>FK: `book_id` (N-1)                    |
+
+### Phân tích quan hệ chính:
+
+  * **library.book** là trung tâm, liên kết với **Tác giả (Author)**, **Nhà xuất bản (Publisher)** và **Danh mục (Category)**.
+  * **library.member** được phân loại theo **Membership Level** (Normal, Silver, Gold) dựa trên số lần mượn sách đã hoàn thành.
+  * **library.borrow** quản lý thông tin chung của một phiếu mượn, trong khi **library.borrow.line** cho phép mượn nhiều loại sách trong cùng một phiếu.
+  * **Hệ thống ràng buộc:** Có các kiểm tra (constraints) để đảm bảo số lượng sách không âm, định dạng email và số điện thoại hợp lệ.
+
+Bạn có muốn tôi hỗ trợ viết mã SQL để tạo các bảng này hoặc tùy chỉnh thêm logic cho các model không?
+
+
 Daily Result
 
 - Implemented the book return workflow by updating the borrow transaction status and automatically storing the actual return date when a book is returned.
