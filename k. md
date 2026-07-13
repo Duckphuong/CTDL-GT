@@ -1,4 +1,19 @@
 cd ~
+wget https://get.enterprisedb.com/postgresql/postgresql-15.6-1-linux-x64-binaries.tar.gz
+mkdir -p ~/.local
+tar -xf postgresql-15.6-1-linux-x64-binaries.tar.gz -C ~/.local --strip-components=1
+# Khởi tạo dữ liệu
+initdb -D $HOME/pgdata
+
+# Khởi động server
+pg_ctl -D $HOME/pgdata -l $HOME/pgdata/logfile start
+
+# Truy cập vào shell của PostgreSQL
+psql postgres
+pg_ctl -D $HOME/pgdata stop
+
+
+cd ~
 wget https://github.com/indygreg/python-build-standalone/releases/download/20240224/cpython-3.10.13+20240224-x86_64-unknown-linux-gnu-install_only.tar.gz
 mkdir -p ~/.local
 tar -xf cpython-3.10.13+20240224-x86_64-unknown-linux-gnu-install_only.tar.gz -C ~/.local --strip-components=1
