@@ -1,3 +1,13 @@
+cd ~
+wget https://github.com/indygreg/python-build-standalone/releases/download/20240224/cpython-3.10.13+20240224-x86_64-unknown-linux-gnu-install_only.tar.gz
+mkdir -p ~/.local
+tar -xf cpython-3.10.13+20240224-x86_64-unknown-linux-gnu-install_only.tar.gz -C ~/.local --strip-components=1
+nano ~/.bashrc
+export PATH="$HOME/.local/bin:$PATH"
+source ~/.bashrc
+
+
+
 user@intern-hcm-002:~/Duckphuong/Python-3.10.18$ ./configure --prefix=$HOME/.local
 checking build system type... x86_64-pc-linux-gnu
 checking host system type... x86_64-pc-linux-gnu
