@@ -1,3 +1,71 @@
+user@intern-hcm-002:~/Duckphuong/Python-3.10.18$ ./configure --prefix=$HOME/.local
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for python3.10... no
+checking for python3... python3
+checking for --enable-universalsdk... no
+checking for --with-universal-archs... no
+checking MACHDEP... "linux"
+checking for gcc... gcc
+checking whether the C compiler works... no
+configure: error: in `/home/user/Duckphuong/Python-3.10.18':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+user@intern-hcm-002:~/Duckphuong/Python-3.10.18$ tail -50  config.log
+bindir='${exec_prefix}/bin'
+build='x86_64-pc-linux-gnu'
+build_alias=''
+build_cpu='x86_64'
+build_os='linux-gnu'
+build_vendor='pc'
+datadir='${datarootdir}'
+datarootdir='${prefix}/share'
+docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+dvidir='${docdir}'
+exec_prefix='NONE'
+host='x86_64-pc-linux-gnu'
+host_alias=''
+host_cpu='x86_64'
+host_os='linux-gnu'
+host_vendor='pc'
+htmldir='${docdir}'
+includedir='${prefix}/include'
+infodir='${datarootdir}/info'
+libdir='${exec_prefix}/lib'
+libexecdir='${exec_prefix}/libexec'
+localedir='${datarootdir}/locale'
+localstatedir='${prefix}/var'
+mandir='${datarootdir}/man'
+oldincludedir='/usr/include'
+pdfdir='${docdir}'
+prefix='/home/user/.local'
+program_transform_name='s,x,x,'
+psdir='${docdir}'
+runstatedir='${localstatedir}/run'
+sbindir='${exec_prefix}/sbin'
+sharedstatedir='${prefix}/com'
+sysconfdir='${prefix}/etc'
+target_alias=''
+
+## ----------- ##
+## confdefs.h. ##
+## ----------- ##
+
+/* confdefs.h */
+#define _GNU_SOURCE 1
+#define _NETBSD_SOURCE 1
+#define __BSD_VISIBLE 1
+#define _DARWIN_C_SOURCE 1
+#define _PYTHONFRAMEWORK ""
+#define _XOPEN_SOURCE 700
+#define _XOPEN_SOURCE_EXTENDED 1
+#define _POSIX_C_SOURCE 200809L
+
+configure: exit 77
+user@intern-hcm-002:~/Duckphuong/Python-3.10.18$ ^C
+user@intern-hcm-002:~/Duckphuong/Python-3.10.18$ 
+
+
 Việc phân quyền hợp lý trong Odoo thường được chia thành hai cấp độ chính: **Người dùng cơ bản** (nhân viên thư viện) chỉ có quyền thực hiện các nghiệp vụ mượn trả và xem thông tin, và **Quản lý thư viện** (Admin) có quyền thay đổi các thiết lập cốt lõi như cấp độ thẻ thành viên hoặc xóa dữ liệu.
 
 Dựa trên nhóm bảo mật `group_library_manager` đã được định nghĩa trong tệp `library_security.xml`, dưới đây là bản thiết kế lại tệp `ir.model.access.csv` tối ưu cho hệ thống của bạn:
