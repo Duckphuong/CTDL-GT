@@ -1,3 +1,6 @@
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQxYXne2cKmRBjWldPZ-B1ezPBDTKD34hL1Sfws6HEZQeba0g_4GrtVfmPDrOwHuA/pubhtml
+
+
 Vấn đề bạn đang gặp phải là một "căn bệnh" rất kinh điển, đặc biệt là với các hệ thống sử dụng ORM (Object-Relational Mapping) nặng như Odoo. Khi code chạy ở local (máy của bạn) mà DB nằm trên server, mỗi thao tác đọc/ghi dữ liệu đều phải đi qua internet. Nếu Odoo thực hiện hàng trăm query nhỏ cho một request (hiện tượng N+1 query), độ trễ (latency) mạng sẽ bị cộng dồn lên, khiến tốc độ phản hồi trở nên cực kỳ rùa bò.
 Việc chuyển môi trường phát triển lên một con server riêng (Dev Server) đặt cùng mạng LAN hoặc cùng Data Center với DB Server là một hướng đi hoàn toàn chính xác. Khi đó, độ trễ giữa code và DB gần như bằng 0. Máy tính của bạn lúc này chỉ đóng vai trò là "màn hình hiển thị" và nhận thao tác gõ phím.
 Dưới đây là chi tiết về 2 cách thiết lập môi trường này trên VS Code:
